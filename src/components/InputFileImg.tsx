@@ -7,15 +7,13 @@ export default function InputFileImg({
 }: {
   noImg: boolean;
   setNoImg: React.Dispatch<React.SetStateAction<boolean>>;
-  setCustomImg: React.Dispatch<
-    React.SetStateAction<string | ArrayBuffer | null>
-  >;
+  setCustomImg: React.Dispatch<React.SetStateAction<string>>;
 }) {
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const reader = new FileReader();
     reader.onload = () => {
-      if (reader.readyState === 2) {
-        setCustomImg(reader.result);
+      if (reader.readyState === 2 && reader.result) {
+        setCustomImg(reader.result.toString());
       }
     };
     if (e.target.files && e.target.files[0]) {

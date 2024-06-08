@@ -24,9 +24,7 @@ export default function FormQrCustom({
   setUrl: React.Dispatch<React.SetStateAction<string>>;
   setQrColor: React.Dispatch<React.SetStateAction<string>>;
   setQrBgColor: React.Dispatch<React.SetStateAction<string>>;
-  setCustomImg: React.Dispatch<
-    React.SetStateAction<string | ArrayBuffer | null>
-  >;
+  setCustomImg: React.Dispatch<React.SetStateAction<string>>;
   setNoImg: React.Dispatch<React.SetStateAction<boolean>>;
   handleQrReset: () => void;
 }) {
