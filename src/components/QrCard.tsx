@@ -8,20 +8,20 @@ export default function QrCard({
   customImg,
   noImg,
 }: {
-  qrRef: any;
+  qrRef: React.RefObject<HTMLDivElement>;
   url: string;
   bgColor: string;
   qrColor: string;
   customImg: string;
   noImg: boolean;
 }) {
-  let imgCustom = undefined;
+  let imgCustom: string | null = "";
 
-  noImg
-    ? (imgCustom = null)
-    : customImg
-    ? (imgCustom = customImg)
-    : (imgCustom = "./logo-apple-icon192.png");
+  if (noImg) {
+    imgCustom = null;
+  } else {
+    imgCustom = customImg ? customImg : "./logo-apple-icon192.png";
+  }
 
   return (
     <article className="card">
