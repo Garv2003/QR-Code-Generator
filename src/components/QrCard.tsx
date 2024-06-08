@@ -15,10 +15,10 @@ export default function QrCard({
   customImg: string;
   noImg: boolean;
 }) {
-  let imgCustom: string | null = "";
+  let imgCustom: string;
 
   if (noImg) {
-    imgCustom = null;
+    imgCustom = "";
   } else {
     imgCustom = customImg ? customImg : "./logo-apple-icon192.png";
   }
